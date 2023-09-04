@@ -19,7 +19,7 @@ function irParaCheckout() {
     if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
         return;
     }
-    window.location.href = "/checkout.html";
+    location.href = "/checkout.html";
 }
 
 export function inicializarCarrinho() {
