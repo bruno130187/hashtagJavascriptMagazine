@@ -1,7 +1,7 @@
 import { formatter } from "./util";
 
 function abrirModal(carro) {
-    let urlImagem = `../assets/img/${carro.imagem}`;
+    let urlImagem = `./assets/img/${carro.imagem}`;
     const bodyIndex = document.getElementById("body-index");
     bodyIndex.classList.add("overflow-hidden");
 
