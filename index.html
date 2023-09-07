@@ -13,6 +13,28 @@
   <title>Boladão Cars</title>
 </head>
 <body id="body-index" class="bg-slate-900 h-full flex flex-col">
+  <div id="modal-alert" class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center">
+    <div class="relative w-auto my-6 mx-auto max-w-3xl">
+      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-slate-900 border-2 border-slate-300 outline-none focus:outline-none">
+        <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+          <h3 id="modal-alert-title" class="text-3xl font-semibold text-slate-200">
+            Modal Title
+          </h3>
+        </div>
+        <div class="relative p-6 flex-auto">
+          <p id="modal-alert-text" class="my-4 text-slate-400 text-lg leading-relaxed">
+            Text
+          </p>
+        </div>
+        <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+          <button id="modal-alert-button-close" type="button" class="bg-emerald-600 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-alert-backdrop" class="hidden opacity-25 fixed inset-0 z-40 bg-black"></div>
   <section id="modal" class="hidden fixed flex flex-col h-full w-full bg-slate-950 p-2 z-50 border-solid border-4 border-yellow-400 rounded-md">
     <div class="flex justify-end text-[28px] mr-1">
       <button id="fechar-modal" title="Fechar detalhes do carro">
@@ -46,13 +68,14 @@
     <a href="./">
       <img class="w-24 p-1" src="assets/logo/logo-original.png" alt="logo-original.png">
     </a>
-    <p class="text-gray-300 font-bold font-awesome text-[25px] mt-5 antialiased text-lg ">Loja de Carros Boladão</p>
+    <p class="text-gray-300 font-bold font-awesome text-[25px] mt-5 antialiased text-lg">Loja de Carros Boladão</p>
     <div class="text-slate-200 flex gap-4 mx-5">
-      <button id="abrir-carrinho">
-        <i class="fa-solid fa-cart-shopping hover:scale-[120%] duration-300"></i>
+      <button id="abrir-carrinho" class="group">
+        <i class="fa-solid fa-cart-shopping fa-lg group-hover:scale-[120%] duration-300"></i>
+        <p id="cart-number" class="ml-[3px] mt-[-30px] group-hover:scale-[120%] duration-300 text-red-900 drop-shadow-lg text-sm font-bold">0</p>
       </button>
       <button onclick="location.href = 'pedidos.html'">
-        <i class="fa-solid fa-user hover:scale-[120%] duration-300"></i>
+        <i class="fa-solid fa-user fa-lg hover:scale-[120%] duration-300 mt-[20px]"></i>
       </button>
     </div>
   </header>

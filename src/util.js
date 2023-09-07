@@ -33,6 +33,7 @@ export function desenharProdutoCarrinhoSimples(idProduto, idContainerHtml, quant
     "max-w-[95%]",
     "mb-2"
   ];
+
   for (const articleClass of elementoArticleClasses) {
       elementoArticle.classList.add(articleClass);
   }
@@ -67,7 +68,7 @@ export const catalogo = [
       cavalaria: "Esse motor produz uma potência extremamente alta. O Aston Martin Vulcan tem uma potência de cerca de 800 cavalos.",
       cilindros: "O motor do Vulcan é um V12, o que significa que ele tem 12 cilindros dispostos em duas fileiras de seis.",
       litragem: "O motor V12 do Aston Martin Vulcan tem uma litragem de aproximadamente 7.0 litros.",
-      aceleracao: "O Aston Martin Vulcan é capaz de acelerar de 0 a 100 km/h (ou 0 a 62 mph) em cerca de 2.9 segundos. No entanto, é importante notar que os números de desempenho podem variar ligeiramente dependendo das condições de teste e configurações específicas."
+      aceleracao: "O Aston Martin Vulcan é capaz de acelerar de 0 a 100 km/h (ou 0 a 62 mph) em cerca de 2.9 segundos. No entanto."
     },
     {
       id: 2,
@@ -81,7 +82,7 @@ export const catalogo = [
       cavalaria: "A potência do Audi R8 varia dependendo da geração e da versão do motor. Nas versões mais potentes com motor V10, a potência pode variar de cerca de 540 a 620 cavalos, dependendo do modelo específico e de eventuais variantes especiais.",
       cilindros: "O Audi R8 com motor V8 tem 8 cilindros dispostos em uma configuração de V. Já nas versões mais potentes com motor V10, são 10 cilindros também dispostos em uma configuração de V.",
       litragem: "As versões com motor V8 geralmente têm uma litragem em torno de 4.2 litros. Nas versões V10, a litragem fica em torno de 5.2 litros.",
-      aceleracao: "O tempo de aceleração de 0 a 100 km/h para o Audi R8 varia de acordo com a geração e a configuração do motor. Nas versões mais potentes, com motor V10 e tração nas quatro rodas, o tempo de aceleração pode estar na faixa de 3.2 a 3.5 segundos, dependendo do modelo específico."
+      aceleracao: "O tempo de aceleração de 0 a 100 km/h para o Audi R8 pode estar na faixa de 3.2 a 3.5 segundos, dependendo do modelo específico."
     },
     {
       id: 3,

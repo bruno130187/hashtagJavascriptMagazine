@@ -22,6 +22,31 @@ function irParaCheckout() {
     location.href = "./checkout.html";
 }
 
+function toggleModal(modalID, title, text){
+    const modal = document.getElementById(modalID);
+    const modalBackDrop = document.getElementById(modalID + "-backdrop");
+    const divTitle = document.getElementById("modal-alert-title");
+    const divText = document.getElementById("modal-alert-text");
+    const buttonClose = document.getElementById("modal-alert-button-close");
+
+    modal.classList.toggle("hidden");
+    modalBackDrop.classList.toggle("hidden");
+    modal.classList.toggle("flex");
+    modalBackDrop.classList.toggle("flex");
+
+    divTitle.innerHTML = `${title}`;
+    divText.innerHTML = `${text}`;
+}
+
+export function inicializarModalAlerta() {
+    document.getElementById("modal-alert-button-close").addEventListener("click", () => {
+        document.getElementById("modal-alert").classList.toggle("hidden");
+        document.getElementById("modal-alert" + "-backdrop").classList.toggle("hidden");
+        document.getElementById("modal-alert").classList.toggle("flex");
+        document.getElementById("modal-alert" + "-backdrop").classList.toggle("flex");
+    });
+}
+
 export function inicializarCarrinho() {
     const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
     const botaoAbrirCarrinho = document.getElementById("abrir-carrinho");
@@ -42,6 +67,7 @@ function incrementarQuantidadeProduto(idProduto) {
     } else {
         console.log("A quantidade máxima é de 5 unidades!");
         console.log("idsProdutoCarrinhoComQuantidade: ", idsProdutoCarrinhoComQuantidade);
+        toggleModal("modal-alert", "Alert!", "A quantidade máxima é de 5 unidades do mesmo produto!");
     }
 }
 
@@ -64,6 +90,15 @@ function removerDoCarrinho(idProduto) {
     renderizarProdutosCarrinho();
     atualizarPrecoCarrinho();
     salvarLocalStorage(chave, idsProdutoCarrinhoComQuantidade);
+}
+
+function atualizarQuantidadeNoIconeDoCarrinho() {
+    let quantidadeTotalCarrinho = 0;
+    for (const idProduto in idsProdutoCarrinhoComQuantidade) {
+        quantidadeTotalCarrinho += idsProdutoCarrinhoComQuantidade[idProduto];
+    }
+    const cartNUmber = document.getElementById("cart-number");
+    cartNUmber.innerHTML = `${quantidadeTotalCarrinho}`;
 }
 
 function mostraBotaoFinalizar() {
@@ -159,4 +194,5 @@ function atualizarPrecoCarrinho() {
     }
     console.log("precoTotalCarrinho: ", precoTotalCarrinho);
     precoCarrinho.innerText = `Total: ${formatter.format(precoTotalCarrinho)}`;
+    atualizarQuantidadeNoIconeDoCarrinho();
 }
